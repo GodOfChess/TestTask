@@ -1,3 +1,105 @@
-body {
-    background: yellow;
+body{
+  background: black;
+}
+
+.menu {
+  list-style: none;
+  margin: 40px;
+  text-align: right;
+  display: flex;
+}
+
+.right, .left {
+   height: 100%;
+   text-align: center;
+}
+
+.right{
+  width:60%;
+}
+
+.left{
+  width:40%;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.mainmenu li:after {
+  content: "|";
+  font-size: 24px;
+  color: white;
+  display: inline-block;
+  vertical-align:top;
+  margin: 40px 20px;
+}
+
+.mainmenu li:last-child:after {
+  content: none;
+}
+
+.menu a {
+  text-decoration: none;
+  letter-spacing: 2px;
+  position: relative;
+  margin: 40px;
+  font-size: 24px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: color .4s;
+}
+
+.menu a, .menu a:visited {
+  color: white;
+}
+
+.menu a.current, .menu a:hover{
+  color: yellow;
+}
+
+.login{
+  text-align: center;
+  position: relative;
+  margin-top: 70px;
+}
+
+.login h1{
+  color:white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+
+.login p{
+  color:white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 24px;
+}
+
+.button{
+  border: 2px solid #333; 
+  display: inline-block;
+  position: relative;
+  margin-top: 90px;
+  font-size: 24px;
+  padding: 15px 35px; 
+  text-decoration: none; 
+  color: white;
+  text-transform: uppercase;
+}
+
+.button:hover{
+  color: yellow;
+  border: 2px solid #e5e619;
+  text-decoration: none;
+  transition: color .4s;
+  transition: border .4s;
+}
+
+.button i{
+  position: relative;
+  margin-left: 10px;
+  top:-2px;
 }

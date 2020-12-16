@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,11 +7,35 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Стартовая страница</title>
+    <title>RememberPlaces</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Стартовая страница</h1>
+
+	<!--Меню сайта-->
+    <nav class="menu">
+  		<div class="left"><a href="">RememberPlaces</a></div>
+  		<div class="right"><ul class="mainmenu">
+	    	<li><a href="" class="current">Главная страница</a></li>
+		    <li><a href="">О нас</a></li>
+		    <li><a href="">Контакты</a></li>
+  		</ul></div>
+	</nav>
+
+    <!--Вход через FB-->
+	<div class = "login">
+		<h1>Добро пожаловать на сайт RememberPlaces</h1>  
+        <p>
+        Здесь вы можете записать ваши лучшие воспоминания<br>
+        Вам предоставляется возможность сохранить ваши любимые места<br>
+        И описать те события, которые произошли там<br>
+        Добавляйте уголки мира в любое время и в любом месте в своем профиле<br>
+        Присоединяйтесь к нам<br>
+    	</p>
+        <a href="#" class="button">Зайти через Facebook<i class="fab fa-facebook-f"></i></a>
+    </div>
+
 </body>
 </html>
