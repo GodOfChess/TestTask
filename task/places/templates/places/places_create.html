@@ -12,20 +12,14 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-    <h1>Домашняя страница</h1>
-    <div class="places">
-        {% if places %}
-        {% for element in places %}
-            <div>
-                <h3>{{ element.title }}</h3>
-                <p>{{ element.comment}}</p>
-            </div>
-        {% endfor %}
-        {% else %}
-            <p>У вас нет добавленных мест</p>
-        {% endif %}
-    </div>
-
-    <button class="btn btn-info"><a href="create">Добавить место</a></button>
+    <h1>Страница для добавления записей</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.title}}<br>
+        {{form.comment}}<br>
+        {{form.date}}<br>
+        <span> {{error}} </span>
+        <button class="btn btn-success" type="submit">Добавить место</button>
+    </form>
 </body>
 </html>

@@ -11,3 +11,6 @@ def about(request):
 
 def contacts(request):
     return render(request, 'main/contacts.html')
+
+def places_home(request):
+    return render(request, 'places/places_home.html')

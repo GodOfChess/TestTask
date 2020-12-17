@@ -103,3 +103,9 @@ body{
   margin-left: 10px;
   top:-2px;
 }
+
+form {
+    margin-left: 32%;
+    width:500px;
+    margin-top: 50px;
+}
