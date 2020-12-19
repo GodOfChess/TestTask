@@ -4,7 +4,7 @@ from django.forms import ModelForm, TextInput, DateTimeInput
 class PlacesForm(ModelForm):
     class Meta:
         model = Places
-        fields = ['title','comment','date']
+        fields = ['title','comment']
 
         widgets = {
             "title": TextInput(attrs={
@@ -15,8 +15,5 @@ class PlacesForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Комментарий'
             }),
-            "date": DateTimeInput(attrs={
-                'class': 'form-control',
-                'placeholder':'Дата публикации'
-            })
+
         }
