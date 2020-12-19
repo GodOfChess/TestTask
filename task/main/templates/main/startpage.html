@@ -1,4 +1,5 @@
 {% load static %}
+{% load account socialaccount %}
 
 <!doctype html>
 <html lang="en">
@@ -34,7 +35,7 @@
         Добавляйте уголки мира в любое время и в любом месте в своем профиле<br>
         Присоединяйтесь к нам<br>
     	</p>
-        <a href="places/" class="button">Зайти через Facebook<i class="fab fa-facebook-f"></i></a>
+        <a href="{% provider_login_url 'vk' method='oauth2' %}" class="button">Зайти через Вконтакте<i class="fab fa-vk"></i></a>
     </div>
 
 </body>

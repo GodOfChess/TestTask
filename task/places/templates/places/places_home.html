@@ -14,11 +14,11 @@
 <body>
     <div class="names">
        <div class="photo">
-            <img src="{% static 'main/img/my_avatar.png' %}" alt="logo">
+            <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="logo">
         </div>
 
         <div class="FB_name">
-            Алексей Зайцев<br>
+            {{ user.get_full_name }}<br>
             <button class='btn btn-danger'><a href="/">Выход</a></button>
         </div>
 
