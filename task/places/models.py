@@ -4,7 +4,6 @@ class Places(models.Model):
     title = models.CharField('Название', max_length=50)
     comment = models.CharField('Комментарий', max_length=250)
 
-
     def __str__(self):
         return self.title
 

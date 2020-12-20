@@ -3,7 +3,7 @@ from .models import Places
 from .forms import PlacesForm
 
 def places_home(request):
-    places = Places.objects.order_by('-title')
+    places = Places.objects.order_by('title')
     return render(request, 'places/places_home.html', {'places': places})
 
 def create(request):

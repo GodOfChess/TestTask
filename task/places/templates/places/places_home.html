@@ -7,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ваши места</title>
+    <title>Домашняя страница</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
@@ -19,7 +19,7 @@
 
         <div class="FB_name">
             {{ user.get_full_name }}<br>
-            <button class='btn btn-danger'><a href="/">Выход</a></button>
+            <button class='btn btn-danger'><a href="exit">Выход</a></button>
         </div>
 
     </div>
@@ -30,21 +30,19 @@
 
     <div class="list">
     {% if places %}
-    {% for element in places %}
-    <div class="element">
-        <h3>{{ element.title }}</h3>
-        <p>{{ element.comment}}</p>
-    </div>
-    {% endfor %}
+        {% for element in places %}
+                <div class="element">
+                    <h3>{{ element.title }}</h3>
+                    <p>{{ element.comment }}</p>
+                </div>
+        {% endfor %}
     {% else %}
-    <div class="element">
-        <p>У вас нет ни одного воспоминания</p>
-    </div>
+        <div class="element">
+            <p>У вас нет ни одного воспоминания</p>
+        </div>
     {% endif %}
-    <button class='btn btn-warning'><a href="create">Добавить воспоминание</a></button>
+        <button class='btn btn-warning'><a href="create">Добавить воспоминание</a></button>
     </div>
-
-    
 
 </body>
 </html>

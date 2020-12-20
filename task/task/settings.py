@@ -44,12 +44,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.vk',
     'django.contrib.sites',
-    'imagekit',
-    'ckeditor',
-    'ckeditor_uploader',
-    'colorful',
-    'adminsortable',
-    'djeym'
 ]
 
 MIDDLEWARE = [
