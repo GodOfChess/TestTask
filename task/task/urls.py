@@ -8,5 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('places/', include('places.urls')),
-    path('accounts/',include('allauth.urls')),
+    path('', include('social_django.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

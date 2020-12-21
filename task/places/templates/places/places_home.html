@@ -14,12 +14,12 @@
 <body>
     <div class="names">
        <div class="photo">
-            <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="logo">
+            <img src="{{ user.avatar }}" alt="logo">
         </div>
 
         <div class="FB_name">
             {{ user.get_full_name }}<br>
-            <button class='btn btn-danger'><a href="exit">Выход</a></button>
+            <button class='btn btn-danger'><a href="logout">Выход</a></button>
         </div>
 
     </div>
