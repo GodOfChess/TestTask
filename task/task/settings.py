@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'django.contrib.sites',
+    'allauth',
+    'allauth.socialaccount.providers.vk',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +70,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends',
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -132,9 +135,12 @@ STATICFILES_DIRS = [
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 SITE_ID=1
+
+GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
 
 LOGIN_REDIRECT_URL='/places/'
 

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Places
 from .forms import PlacesForm
 from django.contrib.auth import logout as auth_logout
+from geopy.geocoders import Nominatim
+import folium
 
 
 def places_home(request):
@@ -11,19 +13,33 @@ def places_home(request):
 
 def create(request):
     error = ''
+    geolocator = Nominatim(user_agent="places")
+    m = folium.Map(width=400, height=250)
+
     if request.method == "POST":
         form = PlacesForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('places_home')
+            instance = form.save(commit=False)
+            title_ = form.cleaned_data.get('title')
+            title = geolocator.geocode(title_)
+            instance.t_lat = title.latitude
+            instance.t_lon = title.longitude
+            t_lat = title.latitude
+            t_lon= title.longitude
+            m = folium.Map(width=400, height=250)
+            folium.Marker([t_lat, t_lon], popup=title, icon=folium.Icon(color='purple')).add_to(m)
+            instance.save()
         else:
             error = 'Форма заполнена неверно'
+
+    m = m._repr_html_()
 
     form = PlacesForm()
 
     data = {
         'form': form,
-        'error': error
+        'error': error,
+        'map': m,
     }
 
     return render(request, 'places/places_create.html', data)
@@ -32,3 +48,4 @@ def create(request):
 def logout(request):
     auth_logout(request)
     return redirect('/')
+

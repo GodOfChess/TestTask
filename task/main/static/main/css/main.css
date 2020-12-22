@@ -114,7 +114,6 @@ form {
 
 .create{
   text-align: center;
-  margin-top: 10%;
 }
 
 .names{
@@ -207,3 +206,17 @@ form {
   margin: 20px;
 }
 
+.map{
+  width: 400px;
+  height: 250px;
+  margin: 40px 40px 40px 600px;
+}
+
+.exit_places{
+  margin-top: 20px;
+}
+
+.exit_places button{
+  width: 100px;
+  height: 35px;
+}
