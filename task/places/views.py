@@ -24,6 +24,7 @@ def create(request):
             title = geolocator.geocode(title_)
             instance.t_lat = title.latitude
             instance.t_lon = title.longitude
+            instance.username = request.user.username
             instance.save()
             return redirect('/places')
         else:

@@ -14,7 +14,7 @@
 <body>
     <div class="names">
        <div class="photo">
-            <img src="{{ user.all.0.get_avatar_url }}" alt="logo">
+            <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="logo">
         </div>
 
         <div class="FB_name">
@@ -29,21 +29,25 @@
     </div>
 
     <div class="list">
-    {% if places %}
-        {% for element in places %}
-                <div class="element">
-                    <h3>{{ element.title }}</h3>
-                    <p>{{ element.comment }}</p>
-                    <div class="maphome">
-                        {{ element.createmap|safe }}
-                    </div>    
-                </div>
-        {% endfor %}
-    {% else %}
-        <div class="element">
-            <p>У вас нет ни одного воспоминания</p>
-        </div>
-    {% endif %}
+    {% with 0 as count %}
+        {% if places %}
+            {% for element in places %}
+                    {% if element.username == user.username %}
+                        <div class="element">
+                            <h3>{{ element.title }}</h3>
+                            <p>{{ element.comment }}</p>
+                            <div class="maphome">
+                                {{ element.createmap|safe }}
+                            </div>
+                        </div>
+                    {% endif %}
+            {% endfor %}
+        {% else %}
+            <div class="element">
+                <p>У вас нет ни одного воспоминания</p>
+            </div>
+        {% endif %}
+    {% endwith %}
         <button class='btn btn-warning'><a href="create">Добавить воспоминание</a></button>
     </div>
 

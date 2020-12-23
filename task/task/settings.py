@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'social_django',
     'django.contrib.sites',
     'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'allauth.socialaccount.providers.vk',
 ]
 

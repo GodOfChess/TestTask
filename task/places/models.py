@@ -9,10 +9,10 @@ class Places(models.Model):
     comment = models.CharField('Комментарий', max_length=250)
     t_lat = models.FloatField('Первая координата')
     t_lon = models.FloatField('Вторая координата')
+    username = models.CharField('ID пользователя', max_length=50)
 
     @property
     def createmap(self):
-        geolocator = Nominatim(user_agent="places")
         m = folium.Map(width=400, height=250)
         folium.Marker([self.t_lat, self.t_lon], icon=folium.Icon(color='purple')).add_to(m)
         m = m._repr_html_()

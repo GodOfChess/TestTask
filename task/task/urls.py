@@ -9,4 +9,5 @@ urlpatterns = [
     path('', include('main.urls')),
     path('places/', include('places.urls')),
     path('', include('social_django.urls')),
+    path('accounts/',include('allauth.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
