@@ -24,15 +24,11 @@ def create(request):
             title = geolocator.geocode(title_)
             instance.t_lat = title.latitude
             instance.t_lon = title.longitude
-            t_lat = title.latitude
-            t_lon= title.longitude
-            m = folium.Map(width=400, height=250)
-            folium.Marker([t_lat, t_lon], popup=title, icon=folium.Icon(color='purple')).add_to(m)
             instance.save()
+            return redirect('/places')
         else:
             error = 'Форма заполнена неверно'
 
-    m = m._repr_html_()
 
     form = PlacesForm()
 

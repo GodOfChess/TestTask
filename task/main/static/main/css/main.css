@@ -203,13 +203,7 @@ form {
 
 .add{
   text-align: center;
-  margin: 20px;
-}
-
-.map{
-  width: 400px;
-  height: 250px;
-  margin: 40px 40px 40px 600px;
+  margin-top: 10%;
 }
 
 .exit_places{
@@ -219,4 +213,30 @@ form {
 .exit_places button{
   width: 100px;
   height: 35px;
+}
+
+.maphome{
+  width: 400px;
+  height: 250px;
+  margin: 40px 40px 40px 360px;
+}
+
+.about-text{
+  margin-top: 10%;
+  text-align: center;
+  color:white;
+  letter-spacing: 2px;
+  font-size: 25px;
+}
+
+.contacts-text{
+  margin-top: 10%;
+  text-align: center;
+  color:white;
+  letter-spacing: 2px;
+  font-size: 28px;
+}
+
+.contacts-text li{
+  list-style: none;
 }

@@ -12,6 +12,23 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-    <h1>Контакты</h1>
+    
+	<nav class="menu">
+  		<div class="left"><a href="{% url 'startpage' %}">RememberPlaces</a></div>
+  		<div class="right"><ul class="mainmenu">
+	    	<li><a href="{% url 'startpage' %}" >Главная страница</a></li>
+		    <li><a href="{% url 'about' %}" >О нас</a></li>
+		    <li><a href="{% url 'contacts' %}" class="current">Контакты</a></li>
+  		</ul></div>
+	</nav>
+
+	<div class="contacts-text">
+    	<ul>
+    		<li>rememberplaces@mail.ru</li>
+    		<li>vk.com/rememberplaces</li>
+    		<li>t.me/rememberplaces</li>
+    	</ul>
+    </div>
+
 </body>
 </html>

@@ -10,7 +10,7 @@ class PlacesForm(ModelForm):
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Название места'
+                'placeholder': 'Название города'
             }),
             "comment": TextInput(attrs={
                 'class': 'form-control',

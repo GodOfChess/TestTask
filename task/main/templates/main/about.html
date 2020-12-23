@@ -12,6 +12,20 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
 <body>
-    <h1>О нас</h1>
+
+	<nav class="menu">
+  		<div class="left"><a href="{% url 'startpage' %}">RememberPlaces</a></div>
+  		<div class="right"><ul class="mainmenu">
+	    	<li><a href="{% url 'startpage' %}" >Главная страница</a></li>
+		    <li><a href="{% url 'about' %}" class="current">О нас</a></li>
+		    <li><a href="{% url 'contacts' %}">Контакты</a></li>
+  		</ul></div>
+	</nav>
+
+    <div class="about-text">
+    	Добавляйте воспоминания о любимых городах мира в ваш список.<br>
+    	Описывайте все события, которые произошли у вас там.<br>
+    	На данном сайте производится авторизация через социальную сеть Вконтакте.<br>
+    </div>
 </body>
 </html>
